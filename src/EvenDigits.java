@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class EvenDigits {
     public static void main(String[] args) {
-        int[] n = {22,34,5667,12,345};
+        int[] n = {-22,-34,5667,12,345};
         int ans = findNumbers(n);
         System.out.println(ans);
     }
