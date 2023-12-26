@@ -19,8 +19,7 @@ public class Ceiling {
             else{
                 return mid;
             }
-            ans = start;
         }
-        return ans;
+        return start;
     }
 }
