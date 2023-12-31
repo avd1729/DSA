@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class BinarySearch2D {
     public static void main(String[] args) {
         int[][] arr = {
@@ -6,10 +8,9 @@ public class BinarySearch2D {
                 {7,8,9}
         };
         int target = 5;
+        // O(nlogn) time complexity
         int[] ans = Searchin2D(arr,target);
-        System.out.println(ans[0]);
-        System.out.println(ans[1]);
-
+        System.out.println(Arrays.toString(ans));
     }
 
     static int[] Searchin2D(int[][] arr , int target){
@@ -44,4 +45,3 @@ public class BinarySearch2D {
     }
 }
 
-// O(nlogn) time complexity
