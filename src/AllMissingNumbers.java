@@ -1,21 +1,20 @@
-// [0 , n] , O(1) space complexity and O(n) time complexity
-
-public class MissingNumber {
+import java.util.ArrayList;
+public class AllMissingNumbers {
     public static void main(String[] args) {
-        int[] arr = {1,2,0,4};
-        //System.out.println(Arrays.toString(arr));
-        int ans = finder(arr);
+        int[] arr = {2,2,2,4};
+        ArrayList<Integer> ans = finder(arr);
         System.out.println(ans);
     }
 
-    static int finder(int[] arr){
+    static ArrayList<Integer> finder(int[] arr){
         sort(arr);
+        ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != i){
-                return i;
+                list.add(i);
             }
         }
-        return arr.length; // n is not found
+        return list;
     }
 
     static void sort(int[] arr){
@@ -40,3 +39,4 @@ public class MissingNumber {
     }
 
 }
+
