@@ -7,6 +7,8 @@ public class Prime {
         //System.out.println(ans);
         ArrayList<Integer> ans = primerange(n);
         System.out.println(ans);
+        boolean[] primes = new boolean[n+1]; // false means prime
+        sieve(primes , n);
     }
     static boolean isPrime(int n){
 
@@ -31,5 +33,22 @@ public class Prime {
         }
         return arr;
     }
-    // O(n*root(n))
+    // O(n * root(n))
+
+    // Sieve of Eratosthenes
+    static void sieve(boolean[] primes , int n ){
+        for (int i = 2; i <= Math.sqrt(n) ; i++) {
+            if (!primes[i]){
+                for (int j = 2*i; j <= n ; j+=i) {
+                    primes[j] = true;
+                }
+            }
+        }
+        for (int i = 2; i <= n ; i++) {
+            if (!primes[i]){
+                System.out.print(i + " ");
+            }
+        }
+    }
+    // O(n * log(logn))
 }
