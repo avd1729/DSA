@@ -3,9 +3,13 @@ import java.util.Arrays;
 public class BubbleSort {
     // aka sinking sort or exchange sort
     public static void main(String[] args) {
-        int[] arr = {2,6,3,1,8,9,7};
-        sort(arr);
-        System.out.println(Arrays.toString(arr));
+        int[] arr1 = {2,6,3,1,8,9,7};
+        int[] arr2 = {2,6,3,1,8,9,7};
+        sort(arr1);
+        System.out.println(Arrays.toString(arr1));
+        recursivesort(arr2,arr2.length-1,0);
+        System.out.println(Arrays.toString(arr2));
+
     }
     // in-place sort
     static void sort(int[] arr){
@@ -27,5 +31,27 @@ public class BubbleSort {
                 break;
             }
         }
+    }
+
+    static void recursivesort(int[] arr , int r , int c){
+
+        if (r == 0){
+            return;
+        }
+
+        if (c < r){
+
+            if (arr[c] > arr[c+1]){
+
+                int temp = arr[c];
+                arr[c] = arr[c+1];
+                arr[c+1] = temp;
+            }
+            recursivesort(arr , r,c+1);
+        }
+        else{
+            recursivesort(arr , r-1 , 0);
+        }
+
     }
 }
