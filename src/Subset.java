@@ -1,9 +1,14 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Subset {
     public static void main(String[] args) {
         subsets1("","abc");
         System.out.println(subsets2("","abc"));
+        int[] arr = {1,2,3};
+        List<List<Integer>> ans = subsets3(arr);
+        System.out.println(ans);
+
     }
 
     static void subsets1 (String p , String up){
@@ -42,4 +47,26 @@ public class Subset {
         return left;
 
     }
+
+    // Iteration
+
+    static List<List<Integer>> subsets3(int[] arr){
+
+        List<List<Integer>> list = new ArrayList<>();
+
+        list.add(new ArrayList<>());
+
+        for (int num : arr){
+            int size = list.size();
+            for (int i = 0; i < size; i++) {
+                List<Integer> inner = new ArrayList<>(list.get(i));
+                inner.add(num);
+                list.add(inner);
+            }
+        }
+
+        return list;
+    }
+
+
 }
